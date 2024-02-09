@@ -1,0 +1,24 @@
+ //store 5 roll no
+        int[] roll=new int[5];
+
+        //store 5 name
+        String[] name=new String[5];
+
+        //data of 5 students :{roll, name , marks}
+        int[] roll1=new int[5];
+        String[] name1=new String[5];
+        float[]marks=new float[5];
+
+        /*if we want to store all 3 things in single entity use class
+        here we create our own data type of Student type which have all these 3 properties
+        , we can do this by using of class
+         */
+        Student[] students=new Student[5];
+        Student kunal;
+        //here kunal is ref var having data type Student ans has 3 properties
+    }
+    //create a class
+    class Student{
+        int[]rno=new int[5];
+        String[] name=new String[5];
+        float[] marks=new float[5];

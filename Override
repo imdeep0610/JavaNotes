@@ -1,0 +1,33 @@
+Final keyword
+We cannot override a method which has final keword
+for eg : public final add(){
+
+          }
+When a final method is called , Java compiler copied the bytecode directly with compile code of calling
+method,eliminating the overhead associated with this method.
+
+We cannot extends a final class, but when we declare a class as final emplicitly we make all its
+method final
+public final class Parent {
+
+}
+public class Child extends Parent{
+ // This will show error
+}
+
+
+Late Binding : Dynamic Method Resolution
+               It happen at runtime, after the compilation (the bytecode conversion stuff is done)
+               and the program is running , that is when overriding is done. Hence it is called
+               Late Binding
+
+
+Early Binding : final method cannot be overriden is decided at compile time .This is called
+                Early Binding
+
+
+** Static method can be inherited but cannot be overriden becoz overiding depends on object
+   and static method doesnt depend on object
+   from whom obj we will call static method it will always execute the static method of parent class
+
+

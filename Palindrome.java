@@ -1,36 +1,25 @@
-package deep10;
-
-import java.util.Scanner;
+package deep12;
 
 public class Palindrome {
     public static void main(String[] args) {
-        Scanner in=new Scanner(System.in);
-        String n=in.next();
-        System.out.println(palindrome(n));
-       /* String orig=n;
-        String ans="";
-        for(int i=n.length()-1;i>=0;i--){
-            char ch=n.charAt(i);
-             ans+=ch;
-        }
-        if(orig.equals(ans)){
-            System.out.println("String is palindrome");
-        }
-        else{
-            System.out.println("String is not palindrome");
-        }*/
+        int n=1123;
+          palindrome(n);
+          if(n==palindrome(n)){
+              System.out.println(true);
+          }
+          else{
+              System.out.println(false);
+          }
     }
-    static boolean palindrome(String str){
-        str=str.toLowerCase();
-        for(int i=0;i<=str.length()/2;i++){
-            char strt=str.charAt(i);
-            char end=str.charAt(str.length()-1-i);
-            if (strt!=end){
-               return false ;
-            }
-            }
-        return true;
-        }
-
+    static int palindrome(int n) {
+        int digits = (int) (Math.log10(n)) + 1; // this gives the no of a digit
+        return helper(n, digits);
     }
-
+        static int helper(int n, int digits){
+            if(n%10==n){
+                return n;
+            }
+        int rem=n%10;
+        return rem*(int)Math.pow(10,digits-1)+(n/10);
+    }
+}

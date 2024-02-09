@@ -1,21 +1,23 @@
-package deep3;
+package deep20;
 
-public class Overloading { //two function having same name can exist with different parameters
+public class Overloading {
+
+    int sum(int a, int b){
+        return a+b;
+    }
+    double sum(double a , int b){
+        return a+b;//for this sum(2,3) will be called due to type casting a/c to return type
+    }
+
+    int sum(int a, int b , int c){
+        return a+b+c;
+    }
     public static void main(String[] args) {
-        fun("Kunal" ,"Jiya");
+        Overloading obj=new Overloading();
 
-        /*fun(); this will show error
-        this is known as Ambuiguity
-        method will not decide which one to run since it has no data
-         */
-    }
-
-    static void fun(String ...v){
-        System.out.println("I am a rockstar");
-    }
-
-    static void fun(int ...v){
-        System.out.println("Happy bday to me");
+        obj.sum(2,3);
+        obj.sum(2,4,7);
+        //obj.sum(2,4,5,7); show error
     }
 
 }
