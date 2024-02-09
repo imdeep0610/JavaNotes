@@ -1,35 +1,31 @@
-package deep9;
+package deep14;
 
 import java.util.Arrays;
 
 public class SelectionSort {
     public static void main(String[] args) {
-        int[] arr ={4,8,10,2,6,4,0,-1};
-        selection(arr);
+        int[] arr={2,7,4,8,5,9,1,10};
+        selectionSort(arr,arr.length,0,0);
         System.out.println(Arrays.toString(arr));
     }
-    static void selection(int[] arr){
-        for(int i=0;i< arr.length;i++){
-         //find the max no in array and swap wth correct index
-            int last =arr.length-i-1;//finding correct index
-            int maxIndex=getMaxIndex( arr,0,last);
-            swap(arr,maxIndex,last);
+    static void selectionSort(int[] arr,int i,int j,int max) {
+        if(i==0){
+            return;
         }
-
-    }
-    static int getMaxIndex(int[] arr, int strt,int last){
-        int max=strt;
-        for(int i=1;i<last;i++){
-            if(arr[max]<arr[i]){
-                max=i;
+        if(j<i) {
+            if (arr[j] > arr[max]) {
+                selectionSort(arr, i, j + 1, j);
             }
+        else
+        {
+            selectionSort(arr,i,j+1,max);
         }
-        return max;
+        }
+        else{
+            int temp=arr[max];
+            arr[max]=arr[i-1];
+            arr[i-1]=temp;
+            selectionSort(arr,i-1,0,0);
+        }
     }
-    static void swap(int[] arr,int frst,int sec){
-        int temp=arr[frst];
-        arr[frst]=arr[sec];
-        arr[sec]=temp;
-    }
-
 }
